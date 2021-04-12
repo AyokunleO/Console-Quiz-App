@@ -29,11 +29,11 @@ namespace ConsoleQuizApp
                 string questionType = Console.ReadLine();
 
                 if(questionType.ToUpper() == "A"){
-                    AddQuestion(AddMultipleChoice());
+                    QuestionTypes.Add(AddMultipleChoice());
                 }else if (questionType.ToUpper() == "B"){
-                    AddQuestion(AddTrueFalse());
+                    QuestionTypes.Add(AddTrueFalse());
                 }else if(questionType.ToUpper() == "C"){
-                    AddQuestion(AddCheckbox());
+                    QuestionTypes.Add(AddCheckbox());
                 }else{
                     Console.WriteLine("Invalid question type selected");
                 }
@@ -58,7 +58,7 @@ namespace ConsoleQuizApp
             }else if(userResp.ToUpper() == "SCORE")
             {
                 // Display Score
-                Console.WriteLine($"You answered a total of {countCorrect + countWrong} questions.\nYou answered {countCorrect} questions correctly and missed {countWrong} questions");
+                Console.WriteLine($"You answered a total of {countCorrect + countWrong} question(s).\nYou answered {countCorrect} question(s) correctly and missed {countWrong} question(s)");
             }else if(userResp.ToUpper() == "QUIT")
             {
                 // Quit Quiz
@@ -69,10 +69,10 @@ namespace ConsoleQuizApp
             }
 
         }
-        public void AddQuestion(Question questionType)
-        {
-            QuestionTypes.Add(questionType);
-        }
+        // public void AddQuestion(Question questionType)
+        // {
+        //     QuestionTypes.Add(questionType);
+        // }
 
         public Question AddMultipleChoice()
         {
